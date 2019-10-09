@@ -1,7 +1,6 @@
 const configCommon = require('./common.json');
 const configEnv = require(`./${process.env.NODE_ENV}.json`);
-
-const exportedCustomTypes = {
+const importedCustomTypes = {
   ...require('../TemplateModule').CUSTOM_TYPES
 };
 
@@ -16,5 +15,5 @@ const envVars = envVarNames.reduce((mem, n) => {
 }, {});
 
 const config = { ...configCommon, ...configEnv, ...envVars };
-config.CUSTOM_TYPES = Object.assign({}, config.CUSTOM_TYPES, exportedCustomTypes);
+config.CUSTOM_TYPES = Object.assign({}, config.CUSTOM_TYPES, importedCustomTypes);
 export default config;
