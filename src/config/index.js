@@ -1,6 +1,10 @@
 const configCommon = require('./common.json');
 const configEnv = require(`./${process.env.NODE_ENV}.json`);
 
+const exportedCustomTypes = {
+  ...require('../TemplateModule').CUSTOM_TYPES
+};
+
 // Accepting React env vars and aggregating them into `config` object.
 const envVarNames = [
   'REACT_APP_PROVIDER_SOCKET',
@@ -12,4 +16,5 @@ const envVars = envVarNames.reduce((mem, n) => {
 }, {});
 
 const config = { ...configCommon, ...configEnv, ...envVars };
+config.CUSTOM_TYPES = Object.assign({}, config.CUSTOM_TYPES, exportedCustomTypes);
 export default config;

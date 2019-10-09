@@ -4,6 +4,10 @@ import { Form, Input, Grid, Card, Statistic } from 'semantic-ui-react';
 import { useSubstrate } from './substrate-lib';
 import { TxButton } from './substrate-lib/components';
 
+const CUSTOM_TYPES = {
+  MyNumber: 'u32'
+};
+
 function Main (props) {
   const { api } = useSubstrate();
   const { accountPair } = props;
@@ -73,8 +77,10 @@ function Main (props) {
   );
 }
 
-export default function TemplateModule (props) {
+function TemplateModule (props) {
   const { api } = useSubstrate();
   return (api.query.templateModule && api.query.templateModule.something
     ? <Main {...props} /> : null);
 }
+
+export { TemplateModule as default, CUSTOM_TYPES };
