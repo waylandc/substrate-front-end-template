@@ -1,6 +1,6 @@
 {
-  "short_name": "Substrate Front End",
-  "name": "Substrate Front End Template",
+  "short_name": "Parrot UI",
+  "name": "Parrot PoC Front End",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,5 +1,9 @@
 {
-  "APP_NAME": "substrate-front-end-tutorial",
+  "APP_NAME": "ui-parrot",
   "DEVELOPMENT_KEYRING": true,
-  "CUSTOM_TYPES": {}
+  "CUSTOM_TYPES": {
+    "Balance": "u128",
+    "TokenId": "u128",
+    "TokenBalance": "u128"
+  }
 }
